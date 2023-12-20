@@ -8,15 +8,22 @@ VIRTUAL="ifb0"
 # set the direction (1 = outgoing only, 2 = incoming only 3 = both)
 DIRECTION=3
 # Speed
-SPEED_DOWNLOAD="128kbit"
-SPEED_UPLOAD="128kbit"
-# Delay in milliseconds (0 = no delay)
-DELAY=700
+# Speed
+SPEED_DOWNLOAD="10mbit"
+SPEED_UPLOAD="10mbit"
+
+#bit: Bits per second (bps)
+#kbit: Kilobits per second (kbps)
+#mbit: Megabits per second (Mbps)
+#gbit: Gigabits per second (Gbps)
+
+# Delay in milliseconds (0 = no delay, 700 was)
+DELAY=0
 
 function show_usage {
     echo
     echo "Bandwidth Control using TC"
-    echo "Version: $VERSION | Author: ole1986"
+    echo "Version: $VERSION | Author: "
     echo
     echo "Usage: $1 [-r|--remove] [-i|--incoming] [-o|--outgoing] [-d|--delay=] [--uspeed=] [--dspeed=] <IP>"
     echo
@@ -24,9 +31,9 @@ function show_usage {
     echo "  -r|--remove     : removes all traffic control being set"
     echo "  -i|--incoming   : limit the bandwidth only for incoming packetes"
     echo "  -o|--outgoing   : limit the bandwidth only for outgoing packetes"
-    echo "  -d|--delay=700  : define the latency in milliseconds (default: 700)"
-    echo "  --uspeed=<speed>: define the upload speed (default: 128kbit)"
-    echo "  --dspeed=<speed>: define the download speed (default: 128kbit)"
+    echo "  -d|--delay=700  : define the latency in milliseconds (default: 0)"
+    echo "  --uspeed=<speed>: define the upload speed (default: 10mbit)"
+    echo "  --dspeed=<speed>: define the download speed (default: 10mbit)"
     echo "  <IP>            : the ip address to limit the traffic for"
     echo
     echo "Changelog:"
