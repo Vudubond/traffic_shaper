@@ -9,8 +9,8 @@ VIRTUAL="ifb0"
 DIRECTION=3
 # Speed
 # Speed
-SPEED_DOWNLOAD="100mbit"
-SPEED_UPLOAD="100mbit"
+SPEED_DOWNLOAD="500mbit"
+SPEED_UPLOAD="500mbit"
 
 #bit: Bits per second (bps)
 #kbit: Kilobits per second (kbps)
