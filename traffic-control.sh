@@ -20,6 +20,13 @@ SPEED_UPLOAD="500mbit"
 # Delay in milliseconds (0 = no delay, 700 was)
 DELAY=0
 
+DEFAULT_IFACE=$(route | grep '^default' | grep -o '[^ ]*$')
+
+if [[ "$DEFAULT_IFACE" != "$INTERFACE" ]]; then
+    echo -e "\033[0;31mError: Interfata de pe server ($DEFAULT_IFACE) nu este egal cu interfata setata in script INTERFACE=$INTERFACE\033[0m"
+    exit 1
+fi
+
 function show_usage {
     echo
     echo "Bandwidth Control using TC"
